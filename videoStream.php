@@ -114,7 +114,26 @@ class VideoStream
             $i += $bytesToRead;
         }
     }
-     
+
+    private function write()
+    {
+        ini_set('display_errors',1);  error_reporting(E_ALL);
+        $i = $this->start;
+        set_time_limit(1);
+        for($k=0; $k<10; $k++) {
+            $bytesToRead = $this->buffer;
+            if(($i+$bytesToRead) > $this->end) {
+                $bytesToRead = $this->end - $i + 1;
+            }
+            $data = stream_get_contents($this->stream, $bytesToRead);
+            $temp = fopen("/var/www/html/videoStream/video-stream/video/temp.mp4", "w");
+            fwrite($temp, $data);
+            echo $data;
+            flush();
+            $i += $bytesToRead;
+        }
+        fclose($temp);
+    }
     /**
      * Start streaming video content
      */
@@ -126,11 +145,19 @@ class VideoStream
         $this->stream();
         $this->end();
     }
+
+    function debug()
+    {
+        $this->open();
+        $this->write(); 
+    }
 }
 
 //$stream = new VideoStream("/dev/video1");
 //$stream->start();
 
-$stream = new VideoStream("/var/www/html/videoStream/video/safety-mode.mp4");
-$stream->start();
+$stream = new VideoStream("/var/www/html/videoStream/video-stream/video/safety-mode.mp4");
+$stream->debug();
+
+
 ?>
