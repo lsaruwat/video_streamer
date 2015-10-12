@@ -1,0 +1,24 @@
+zoneminder (1.28.1-testing) testing; urgency=medium
+
+  * UI fixes, security fixes, RTSP fixes, Digest Auth, language fixes and more.
+
+ -- Isaac Connor <iconnor@connortechnology.com>  Mon, 29 Dec 2014 17:13:00 -0500
+
+zoneminder (1.28.0-testing) testing; urgency=medium
+
+  * Release
+
+ -- Isaac Connor <iconnor@connortechnology.com>  Fri, 17 Oct 2014 09:27:22 -0400
+
+zoneminder (1.27.99+1-testing-SNAPSHOT2014072901) testing; urgency=medium
+
+  * improve error messages
+  * Make zmupdate re-run the most recent patch so that people running the daily builds get their db updates
+
+ -- Isaac Connor <iconnor@connortechnology.com>  Tue, 29 Jul 2014 14:50:20 -0400
+
+zoneminder (1.27.0+1-testing-v4ltomonitor-1) testing; urgency=high
+
+  * Snapshot release - 
+
+ -- Isaac Connor <iconnor@connortechnology.com>  Wed, 09 Jul 2014 21:35:29 -0400

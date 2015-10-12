@@ -126,7 +126,7 @@ class VideoStream
                 $bytesToRead = $this->end - $i + 1;
             }
             $data = stream_get_contents($this->stream, $bytesToRead);
-            $temp = fopen("/var/www/html/videoStream/video-stream/video/temp.mp4", "w");
+            $temp = fopen("/var/www/html/video-stream/video/temp.mp4", "w");
             fwrite($temp, $data);
             echo $data;
             flush();
@@ -156,8 +156,8 @@ class VideoStream
 //$stream = new VideoStream("/dev/video1");
 //$stream->start();
 
-$stream = new VideoStream("/var/www/html/videoStream/video-stream/video/safety-mode.mp4");
-$stream->debug();
+$stream = new VideoStream("/var/www/html/video-stream/video/1.webm");
+$stream->start();
 
 
 ?>
